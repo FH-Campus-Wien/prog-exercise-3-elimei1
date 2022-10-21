@@ -24,6 +24,9 @@ public class App {
             daysPerWeek = 0;
         }
     }
+    if (daysPerWeek != 0) {
+        System.out.println();
+    }
     }
 
     public static long[] lcg(long seed) {
