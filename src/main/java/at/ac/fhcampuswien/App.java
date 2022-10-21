@@ -88,7 +88,15 @@ public class App {
         return true;
     }
 
+    public static String camelCase(String s) {
+        String string = "?";
+        return string;
+    }
 
+    public static int checkDigit(int[] code) {
+
+
+    }
 
     public static void main(String[] args) {
         // test your method implementations here
