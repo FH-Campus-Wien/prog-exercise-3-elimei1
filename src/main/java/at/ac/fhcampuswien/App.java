@@ -1,6 +1,5 @@
 package at.ac.fhcampuswien;
 
-import java.sql.SQLOutput;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -33,7 +32,7 @@ public class App {
         double m = Math.pow(2, 31);
         int a = 1103515245;
         int c = 12345;
-        long x1 =0;
+        long x1;
 
         for (int i = 0; i < 10; i++) {
             x1 =  ( (long) a * seed + (long) c) % (long) m;
@@ -95,7 +94,22 @@ public class App {
 
     public static int checkDigit(int[] code) {
 
+    int weight = 0;
+    int check;
 
+    for (int position = 0; position < code.length; position++) {
+        weight = weight + code[position] * (position+2);
+    }
+
+    check = 11 - (weight % 11);
+
+    if (check == 10) {
+        return 0;
+    }
+    else if (check == 11) {
+        return 5;
+    }
+    return check;
     }
 
     public static void main(String[] args) {
